@@ -1,0 +1,578 @@
+/*common样式开始*/
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.commonTitle {
+	color: #009ee0;
+	font-size: 80px;
+	line-height: 0.8;
+	font-weight: bold;
+	letter-spacing: -5px;
+}
+
+.commonText {
+	color: #FFFFFF;
+	line-height: 1.5;
+	font-size: 15px;
+}
+/*common样式结束*/
+
+/*头部样式开始*/
+#head {
+	background: #fff;
+	width: 100%;
+	
+}
+
+#head .header_main {
+	width: 1100px;
+	height: 80px;
+	margin: 0 auto;
+	position: relative;
+} 
+
+#head .header_main .logo {
+	float: left;
+	margin-top: 15px;
+}
+
+#head .header_main .nav {
+	float: right;
+	margin-top: 50px;
+}
+
+#head .header_main .nav > .list li {
+	float: left;
+	margin-left: 40px;
+	position: relative;
+}
+
+#head .header_main .nav > .list li .up{
+	color: #000;
+	position: absolute;
+	width: 0;
+	overflow: hidden;
+	transition: 1s width;
+}
+
+#head .header_main .nav > .list li:hover .up {
+	width: 100%;
+}
+
+#head .header_main .arrow {
+	width: 21px;
+	height: 11px;
+	background: url(../img/icon/arrow_drop_down01.png) center center no-repeat;
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	transition: .5s left;
+	z-index: 2;
+}
+/*头部样式结束*/
+
+/*内容区样式开始*/
+#content {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+#content > .list {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 1s top;
+}
+
+#content > .list > li {
+	position: relative;
+	background-position: 50%,50% !important;
+}
+
+/*第一屏样式*/
+#content > .list .home {
+	background: url(../img/bg1.jpg) no-repeat;
+}
+
+#content > .list .home .home1 {
+	width: 100%;
+	height: 100%;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+#content > .list .home .home1  li div {
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 200px;
+}
+
+#content > .list .home .home1 li {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	visibility: hidden;
+}
+
+#content > .list .home .home1 li.active {
+	visibility: visible;
+}
+
+#content > .list .home .home1 li:nth-child(1) {
+	background: #dc6c5f;
+}
+
+#content > .list .home .home1 li:nth-child(2) {
+	background: #95dc84;
+}
+
+#content > .list .home .home1 li:nth-child(3) {
+	background: #64b9d2;
+}
+
+#content > .list .home .home1 li:nth-child(4) {
+	background: #333333;
+}
+
+/*从左往右leftHide rightShow 的动画开始*/
+#content > .list .home .home1 li.leftHide {
+	visibility: hidden;
+	animation: leftHide 1.5s 1 linear;
+}
+
+#content > .list .home .home1 li.rightShow {
+	visibility: visible;
+	animation: rightShow 1.5s 1 linear;
+}
+
+@keyframes leftHide{
+	0%{
+		visibility: visible;
+	}
+	50%{
+		transform: translateX(-40%) rotateY(40deg) scale(.8);
+	}
+	100%{
+		transform: translateZ(-200px);
+	}
+}
+
+@keyframes rightShow{
+	0%{
+		visibility: hidden;
+		transform: translateZ(-200px);
+	}
+	50%{
+		transform: translateX(40%) rotateY(-40deg) scale(.8);
+	}
+	100%{}
+}
+/*从左往右leftHide rightShow 的动画结束*/
+
+/*从右往左leftShow rightHide 的动画开始*/
+#content > .list .home .home1 li.leftShow {
+	visibility: visible;
+	animation: leftShow 1s 1 linear;
+}
+
+#content > .list .home .home1 li.rightHide {
+	visibility: hidden;
+	animation: rightHide 1s 1 linear;
+}
+
+@keyframes leftShow{
+	0%{
+		visibility: hidden;
+		transform: translateZ(-200px);
+	}
+	50%{
+		transform: translateX(-40%) rotateY(40deg) scale(.8);
+	}
+	100%{}
+}
+
+@keyframes rightHide{
+	0%{
+		visibility: visible;
+	}
+	50%{
+		transform: translateX(40%) rotateY(-40deg) scale(.8);
+	}
+	100%{
+		transform: translateZ(-200px);
+	}
+}
+/*从右往左leftShow rightHide 的动画结束*/
+
+#content > .list .home .home2 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+#content > .list .home .home2 li {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background: rgba(255,255,255,.5);
+	display: inline-block;
+	box-shadow: 0 0 4px rgba(25,25,25,.8);
+	cursor: pointer;
+}
+
+#content > .list .home .home2 li.active {
+	background: #FFFFFF;
+	cursor: default;
+}
+
+/*第二屏样式*/
+#content > .list .course {
+	background: url(../img/bg2.jpg) no-repeat;
+}
+
+#content > .list .course .course1 {
+	margin: 50px;
+}
+
+#content > .list .course .course2 {
+	margin-left: 50px;
+	width: 400px;
+}
+
+#content > .list .course .course3 {
+	width: 480px;
+	position: absolute;
+	right: 50px;
+	top: 70px;
+}
+
+#content > .list .course .course3 .item {
+	width: 118px;
+	height: 132px;
+	position: relative;
+	float: left;
+	margin: 2px 1px;
+	perspective: 500px;
+	transform-style: preserve-3d;
+}
+
+#content > .list .course .course3 .item .face,
+#content > .list .course .course3 .item .back_face {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+	transition: 1s transform;
+}
+
+#content > .list .course .course3 .item .back_face {
+	background-position: 50% 50%;
+}
+
+#content > .list .course .course3 .item:nth-of-type(1) .back_face {
+	background: url(../img/bg5.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(2) .back_face {
+	background: url(../img/bg4.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(3) .back_face {
+	background: url(../img/bg3.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(4) .back_face {
+	background: url(../img/bg2.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(5) .back_face {
+	background: url(../img/bg5.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(6) .back_face {
+	background: url(../img/bg4.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(7) .back_face {
+	background: url(../img/bg3.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(8) .back_face {
+	background: url(../img/bg2.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(9) .back_face {
+	background: url(../img/bg5.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(10) .back_face {
+	background: url(../img/bg4.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(11) .back_face {
+	background: url(../img/bg3.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item:nth-of-type(12) .back_face {
+	background: url(../img/bg2.jpg) no-repeat;
+}
+
+#content > .list .course .course3 .item .face {
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	background: #009ee0;
+	color: #FFFFFF;
+}
+
+#content > .list .course .course3 .item:hover .face {
+	transform: rotateY(360deg);
+}
+
+#content > .list .course .course3 .item:hover .back_face {
+	transform: rotateY(180deg);
+}
+
+/*第三屏样式*/
+#content > .list .about {
+	background: url(../img/bg3.jpg) no-repeat;
+}
+
+#content > .list .about .about1 {
+	margin: 50px 0 100px 50px;
+}
+
+#content > .list .about .about2 {
+	margin-left: 50px;
+	width: 400px;
+}
+
+#content > .list .about .about3 > .item {
+	width: 260px;
+	height: 200px;
+	border: 5px solid rgba(255,255,255,.5);
+	border-radius: 8px;
+	position: absolute;
+	overflow: hidden;
+}
+
+#content > .list .about .about3 > .item:nth-child(1) {
+	left: 750px;
+	top: 50px;
+}
+
+#content > .list .about .about3 > .item:nth-child(2) {
+	left: 600px;
+	top: 290px;
+}
+
+#content > .list .about .about3 > .item > span,
+#content > .list .about .about3 > .item > ul {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#content > .list .about .about3 > .item:nth-child(1) > span {
+	background: url(../img/樱桃.jpg) no-repeat center center;
+	transform: scale(1.5);
+	transition: 1s transform;
+}
+
+#content > .list .about .about3 > .item:nth-child(2) > span {
+	background: url(../img/橘子.jpg) no-repeat center center;
+	transform: scale(1.5);
+	transition: 1s transform;
+}
+
+#content > .list .about .about3 > .item:hover span {
+	transform: scale(1);
+}
+
+#content > .list .about .about3 > .item > ul > li {
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+
+#content > .list .about .about3 > .item > ul >li > img {
+	position: absolute;
+	transition: 1s top, 1s left;
+}
+
+
+/*第四屏样式*/
+#content > .list > .works {
+	background: url(../img/bg4.jpg) no-repeat;
+}
+
+#content > .list > .works .works1 {
+	margin: 50px 0 100px 50px;
+}
+
+#content > .list > .works .works2 {
+	margin-left: 50px;
+}
+
+#content > .list > .works .works2 .item {
+	width: 220px;
+	height: 133px;
+	float: left;
+	margin: 0 1px;
+	position: relative;
+	overflow: hidden;
+}
+
+#content > .list > .works .works2 > .item:last-child {
+	width: 332px;
+}
+
+#content > .list > .works .works2 .item .mask {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	padding: 15px;
+	background: #000000;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	color: #fff;
+	transition: .5s opacity;
+}
+
+#content > .list > .works .works2 .item:hover .mask {
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+
+#content > .list > .works .works2 .item .mask .icon {
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	margin-top: 10px;
+	background: url(../img/icon/search.png) no-repeat 38% 83%;
+	transition: .5s background-position;
+}
+
+#content > .list > .works .works2 .item .mask .icon:hover {
+	background-position: 38% 14%;
+}
+
+#content > .list > .works .works2 .item img {
+	transition: 1s transform;
+}
+
+#content > .list > .works .works2 .item:hover img {
+	transform: rotate(30deg) scale(1.5);
+}
+
+#content > .list > .works .works3 {
+	width: 128px;
+	height: 128px;
+	background: url(../img/dog.png) no-repeat;
+	position: absolute;
+	left: 900px;
+	top: 200px;
+	animation: works3Move 8s linear infinite;
+}
+@keyframes works3Move{
+	0%{
+		transform: translateX(0px) rotateY(0deg);
+	}
+	49%{
+		transform: translateX(-490px) rotateY(0deg);
+	}
+	50%{
+		transform: translateX(-500px) rotateY(180deg);
+	}
+	100%{
+		transform: translateX(0px) rotateY(180deg);
+	}
+}
+
+/*第五屏样式*/
+#content > .list .team {
+	background: url(../img/bg5.jpg) no-repeat;
+}
+
+#content > .list .team .team1,
+#content > .list .team .team2 {
+	margin: 50px;
+	width: 400px;
+}
+
+#content > .list .team .team1 {
+	float: left;
+}
+
+#content > .list .team .team2 {
+	float: right;
+}
+
+#content > .list .team .team3 {
+	width: 880px;
+	height: 448px;
+	position: absolute;
+	left: 50%;
+	/*margin-left的值是width的一半  这样可以使元素居中显示*/
+	margin-left: -440px;	
+	top: 380px;	
+}
+
+#content > .list .team .team3 > li {
+	width: 110px;
+	height: 100%;
+	background: url(../img/dog.png) no-repeat;
+	float: left;
+}
+
+#content > .list > li > section {
+	width: 1100px;
+	height: 520px;
+	background: rgba(0,0,0,.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	color: #fff;
+}
+
+/*小圆点样式*/
+#content > .dot {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+}
+#content > .dot > li {
+	width: 15px;
+	height: 15px;
+	border: .5px solid #333333;
+	margin-top: 5px;
+	border-radius: 50%;
+}
+#content > .dot > li.active {
+	background: #FFFFFF;
+}
+/*内容区样式结束*/
